@@ -1,0 +1,49 @@
+<%- include ("partials/header.ejs") %>
+    
+<div class= "" style=" background-color: white;" id="sidebar-wrapper">
+
+    <div class="sidebar-heading">
+        <img src="/res/Intersection 2.png" alt="" class="img-fluid">
+    </div>
+
+    <div id="si" class="list-group border-0">                    
+
+        <a href="/" class="list-group-item  d-flex justify-content-between borderless align-items-center act">
+            Inventory List<i class="fas fa-chevron-right"></i>
+        </a>
+        <a href="/technician" class="list-group-item  d-flex justify-content-between borderless align-items-center">
+            Technicians<i class="fas fa-chevron-right"></i>
+        </a>
+       <!--  <a href="/pendinservice" class="list-group-item  d-flex justify-content-between borderless align-items-center">
+            Pending Services<i class="fas fa-chevron-right"></i>
+        </a>
+        <a href="/chatbothistory" class="list-group-item  d-flex justify-content-between borderless align-items-center">
+            Chatbot History<i class="fas fa-chevron-right"></i>
+        </a> -->
+
+    </div>
+
+</div>
+
+<div id="page-content-wrapper" class="page-content-wrapper">
+
+    <%- include ("partials/navbar.ejs") %>
+
+    <div class="container">
+
+        <%- include ("partials/jumbotron.ejs") %>
+
+        <div class="nav-item nav-link mt-4 pl-0">
+            Inventory <i class="fas fa-chevron-down inventdrop"></i>
+            <a href="/inventory/new" class="btn" style="float:right;">
+                <i class="fas fa-plus"></i>
+            </a>
+        </div>
+
+    
+        <%- include ("partials/inventoryTable")  %> 
+
+    </div>
+ 
+</div>
+<%- include ("partials/footer.ejs") %> 

@@ -1,0 +1,67 @@
+<%- include ("partials/header.ejs") %> 
+
+<div class= "" style=" background-color: white;" id="sidebar-wrapper">
+
+    <div class="sidebar-heading">
+        <img src="/res/Intersection 2.png" alt="" class="img-fluid">
+    </div>
+
+    <div id="si" class="list-group border-0">                    
+
+        <a href="/" class="list-group-item  d-flex justify-content-between borderless align-items-center">
+            Inventory List<i class="fas fa-chevron-right"></i>
+        </a>
+        <a href="/technician" class="list-group-item  d-flex justify-content-between borderless align-items-center act">
+            Technicians<i class="fas fa-chevron-right"></i>
+        </a>
+        <!-- <a href="/pendinservice" class="list-group-item  d-flex justify-content-between borderless align-items-center">
+            Pending Services<i class="fas fa-chevron-right"></i>
+        </a>
+        <a href="/chatbothistory" class="list-group-item  d-flex justify-content-between borderless align-items-center">
+            Chatbot History<i class="fas fa-chevron-right"></i>
+        </a> -->
+
+    </div>
+
+</div>
+
+<div id="page-content-wrapper" class="page-content-wrapper">
+
+    <%- include ("partials/navbar.ejs") %>
+    <div class="container mt-1">
+        <a href="/technician/new" class="btn" style="float:right;">
+            <i class="fas fa-plus"></i>
+        </a>
+    </div>
+
+    <div class="container my-5">
+        
+        <div class="row rowOfCard">
+            <% techData.forEach(doc =>{ %>
+                <div class="col-4">
+                    <div class="card card-flip mt-2 d-flex align-items-stretch border-0" style="background-color: #f5f5f5;border: none;">
+                        <div class="card-front h-100 w-100 frontCard gradientBG">
+                            <img src="<%= doc.data().profileURL %> " class="card-img-top" width="10rem" alt="...">
+                            <div class="card-body text-center text-white">
+                                <h5 class="card-title"><%= doc.data().name %></h5>
+                                <h6 class="card-subtitle mb-2 text-white"><%= doc.data().class %></h6>  
+                                <small>Airport Authority Of India</small>       
+                            </div>
+                        </div>
+                        <div class="card-back d-flex align-items-center gradientBG h-100 frontCard">
+                            <div class="card-body  text-white">
+                                <h4 class="card-title"><%= doc.data().name %></h4>
+                                <h5 class="card-subtitle mb-2">ID:12345</h5>
+                                <h5 class="card-text">Class: <%= doc.data().class %> </h5>
+                                <h6 class="card-text"><i class="fas fa-phone-square-alt"></i> <%= doc.data().contactNumber %> </h6>
+                                <h6 class="card-text"><i class="fas fa-envelope"></i> <%= doc.data().email %> </h6>        
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            <% }); %> 
+        </div>
+    </div>
+
+</div>
+<%- include ("partials/footer.ejs") %> 

@@ -1,0 +1,40 @@
+<div class="">
+
+    <table class="table mt-2 rounded-sm fixed_header" style="background-color: white" id="inventoryTable">
+
+        <thead style="border-top: 0;">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Equipment Name</th>
+                <th scope="col">Qr Number</th>
+                <th scope="col">Model Number</th>
+                <th scope="col">Installed On</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% docData.forEach(doc => { %>
+                <tr>
+                    <td scope='row'></td>
+                    <td><%= doc.data().name %></td>
+                    <td><%= doc.data().qrNumber %> </td>
+                    <td><%= doc.data().modelNumber %></td>
+
+                    <% if(typeof(doc.data().dateOfInstallation)=="string"){%>
+                        <td><%= doc.data().dateOfInstallation.substring(0,12)  %></td>
+                    <% }else{ %>
+                        <td><%= doc.data().dateOfInstallation.toDate().toDateString().substring(4)  %></td>   
+                    <% }%>
+                    
+                    <% if(doc.data().shelved == true){ %>
+                        <td class="font-weight-bolder text-danger">SHELVED</td>
+                    <% }else{ %>
+                        <td class="font-weight-bolder" style="color: #a6a0ff;">ACTIVE</td>
+                    <% } %>
+                    </td>
+                </tr>   
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+

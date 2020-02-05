@@ -1,0 +1,45 @@
+
+<div class="nav-item nav-link mt-4 pl-0">
+    Dashboard <i class="fas fa-chevron-down dashdrop"></i>
+</div>
+    
+<% var countOfActive=0;docData.forEach(element => {if(element.data().shelved == false){countOfActive++;}}); %> 
+
+<div class="card text-white mt-1">
+
+    <img src="/res/jumbotronPic.png" class="card-img img-fluid" alt="...">
+
+    <div class="card-img-overlay">
+        
+        <div class="row d-flex justify-content-around mt-5">
+
+            <div class="col-lg-3 text-white text-center">
+
+                <h4 >In Inventory</h4>
+                <h2><span id="tot"><%=docData.size%></span>
+                  <small>Items</small>
+                </h2>
+
+            </div>
+
+            <div class="col-lg-3 text-white text-center">
+
+                <h4>Avaiable</h4>
+                <h2><span id="avai"><%=countOfActive %></span>
+                    <small>Items</small>
+                </h2>
+
+            </div>
+
+            <div class="col-lg-3 text-white text-center">
+
+                <h4>Unavailable</h4>
+                <h2><span id="unavai"><%=(docData.size - countOfActive) %></span>
+                    <small>Items</small>
+                </h2>
+                
+            </div>
+
+        </div>
+    </div>
+</div>

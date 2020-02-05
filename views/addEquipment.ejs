@@ -1,0 +1,61 @@
+<%- include ("partials/header") %>
+
+<div class= "" style=" background-color: white;" id="sidebar-wrapper">
+
+    <div class="sidebar-heading">
+        <img src="/res/Intersection 2.png" alt="" class="img-fluid">
+    </div>
+
+    <div id="si" class="list-group border-0">                    
+
+        <a href="/" class="list-group-item  d-flex justify-content-between borderless align-items-center act">
+            Inventory List<i class="fas fa-chevron-right"></i>
+        </a>
+        <a href="/technician" class="list-group-item  d-flex justify-content-between borderless align-items-center">
+            Technicians<i class="fas fa-chevron-right"></i>
+        </a>
+
+    </div>
+
+</div>
+
+<div id="page-content-wrapper" class="page-content-wrapper">
+
+    <%- include ("partials/navbar.ejs") %>
+
+    <div class="container newEntryBackground">
+        <form action="/inventory" method="POST" class="newEntry" novalidate>
+            <div class="form-group">
+                <label for="name">Equipment Name</label>
+                <input type="text" class="form-control" id="name" name="equipment[name]" required>
+                <div class="invalid-feedback">
+                    Please Enter a Equipment Name.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">QR Number</label>
+                <input type="text" class="form-control" id="" name="equipment[qrNumber]" required>
+                <div class="invalid-feedback">
+                    Please Enter a QR Number.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Model Number</label>
+                <input type="text" class="form-control" id="" name="equipment[modelNumber]" required>
+                <div class="invalid-feedback">
+                    Please Enter a Model Number.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Date Of Installation</label>
+                <input type="date" class="form-control" id="" name="dateOfInstallation" required>
+                <div class="invalid-feedback">
+                    Please Choose a Date.
+                </div>
+            </div>
+            <button type="submit" class="btn btn-block gradientBG text-white" >Submit</button>
+            <a href="/" class="btn btn-outline-secondary btn-block" >Back</a>
+        </form>
+    </div>
+</div>
+<%- include ("partials/footer") %>

@@ -1,0 +1,73 @@
+<%- include ("partials/header") %>
+
+<div class= "" style=" background-color: white;" id="sidebar-wrapper">
+
+    <div class="sidebar-heading">
+        <img src="/res/Intersection 2.png" alt="" class="img-fluid">
+    </div>
+
+    <div id="si" class="list-group border-0">                    
+
+        <a href="/" class="list-group-item  d-flex justify-content-between borderless align-items-center ">
+            Inventory List<i class="fas fa-chevron-right"></i>
+        </a>
+        <a href="/technician" class="list-group-item  d-flex justify-content-between borderless align-items-center act">
+            Technicians<i class="fas fa-chevron-right"></i>
+        </a>
+
+    </div>
+
+</div>
+
+<div id="page-content-wrapper" class="page-content-wrapper">
+
+    <%- include ("partials/navbar.ejs") %>
+
+    <div class="container newEntryBackground">
+        <form action="/technician" method="POST" class="newEntry" novalidate>
+            <div class="form-group">
+                <label for="name">Technician Name</label>
+                <input type="text" class="form-control" id="name" name="technician[name]" required>
+                <div class="invalid-feedback">
+                    Please Enter Technician Name.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="technician[email]" required>
+                <div class="invalid-feedback">
+                    Please Enter a Valid Email.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="class">Class</label>
+                <select id="class" class="form-control" name=technician[class]"">
+                    <option selected>Choose...</option>
+                    <option>Aviation</option>
+                    <option>Terminals</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="contactnumber">Contact Number</label>
+                <input type="text" class="form-control" id="contactnumber" name="technician[contactNumber]" required>
+                <div class="invalid-feedback">
+                    Please Enter a Contact Number.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="profileurl">Profile URL</label>
+                <input type="url" class="form-control" id="profileurl" name="technician[profileURL]" required>
+                <div class="invalid-feedback">
+                    Please Enter a valid URL.
+                </div>
+            </div>
+            <!-- <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFile" name="technician[image]"> 
+                <label class="custom-file-label" for="customFile">Choose file</label>
+            </div> -->
+            <button type="submit" class="btn btn-block gradientBG text-white" >Submit</button>
+            <a href="/technician" class="btn btn-outline-secondary btn-block" >Back</a>
+        </form>
+    </div>
+</div>
+<%- include ("partials/footer") %>
