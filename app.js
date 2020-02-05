@@ -131,46 +131,6 @@ app.post("/technician",(req,res)=>{
 
 });
 
-// Download the helper library from https://www.twilio.com/docs/node/install
-// Your Account Sid and Auth Token from twilio.com/console
-// DANGER! This is insecure. See http://twil.io/secure
-/*
-const VoiceResponse = require('twilio').twiml.VoiceResponse;
-const client = require('twilio')(accountSid, authToken);
-
-client.calls
-      .create({
-         url: 'http://demo.twilio.com/docs/voice.xml',
-         to: '+91 9962641833 ',
-         from: '+91 8939051299'
-       })
-      .then(call => console.log(call.sid)
-      .catch(err => console.log('OOPS'))
-      );
-
-      app.post('/voice', (request, response) => {
-        // Use the Twilio Node.js SDK to build an XML response
-        const twiml = new VoiceResponse();
-      
-        // Use the <Gather> verb to collect user input
-        const gather = twiml.gather({ numDigits: 1 });
-        gather.say('For sales, press 1. For support, press 2.');
-      
-        // If the user doesn't enter input, loop
-        twiml.redirect('/voice');
-      
-        // Render the response as XML in reply to the webhook request
-        response.type('text/xml');
-        response.send(twiml.toString());
-      });
-      
-      // Create an HTTP server and listen for requests on port 3000
-      console.log('Twilio Client app HTTP server running at http://127.0.0.1:3000');
-//setting up Port and IP */
-/* app.listen(5000,()=>{
-  console.log("Server Started");
-}); */
-
 app.listen(process.env.PORT,process.env.IP,()=>{
   console.log("Server Started");
 });
