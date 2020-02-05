@@ -134,8 +134,7 @@ app.post("/technician",(req,res)=>{
 // Download the helper library from https://www.twilio.com/docs/node/install
 // Your Account Sid and Auth Token from twilio.com/console
 // DANGER! This is insecure. See http://twil.io/secure
-/* const accountSid = 'AC09502be0dae97ce7347595b83040825b';
-const authToken = '5cd9de7124a5692e7b1107a210ebf0fb';
+/*
 const VoiceResponse = require('twilio').twiml.VoiceResponse;
 const client = require('twilio')(accountSid, authToken);
 
