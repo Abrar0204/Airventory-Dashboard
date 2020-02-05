@@ -1,2 +1,2 @@
 # AirVentory
-An Application to keep track all you equipments and technicians
+An Application to keep track of all you equipments and technicians
